@@ -1,9 +1,12 @@
 
 
 int x;
+int y;
 
 void setup() {
     size(800, 200);
+    x=50;
+    y=100;
     
     //1. Set the variable named x to 50.
 }
@@ -11,6 +14,20 @@ void setup() {
 void draw() {
 
 	background(200,200,200);
+fill(25,50,255);
+ellipse(x,y,50,50);
+if(mousePressed){
+   x++;
+}
+if(x=800){
+  import ddf.minim.*;
+boolean soundPlayed = false;
+void playSound() {
+    if (!soundPlayed) {
+        Minim minim = new Minim(this);
+        AudioSample sound = minim.loadSample("ding.wav");
+      }
+
  
     //2. Draw an ellipse of height and width 50. Make sure to use the x variable for its X position. 
     //   Pick a y value that places it half way down the window.
